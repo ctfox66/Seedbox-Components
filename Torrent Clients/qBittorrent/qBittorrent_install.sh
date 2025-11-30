@@ -295,9 +295,9 @@ FileLogger\Backup=true
 FileLogger\DeleteOld=true
 FileLogger\Enabled=true
 FileLogger\MaxSizeBytes=66560
-FileLogger\Path=/home/admin/.local/share/qBittorrent/logs
 
 [BitTorrent]
+Session\AsyncIOThreadsCount=$aio
 Session\ConnectionSpeed=9000
 Session\DiskQueueSize=10485760
 Session\ExcludedFileNames=
@@ -309,13 +309,17 @@ Session\MaxUploadsPerTorrent=4000
 Session\PeerTurnover=10
 Session\PeerTurnoverCutOff=30
 Session\PeerTurnoverInterval=30
-Session\Port=44122
+Session\Port=$qb_incoming_port
 Session\QueueingSystemEnabled=false
 Session\RequestQueueSize=5000
 Session\SSL\Port=60703
 Session\SSRFMitigation=false
 Session\SuggestMode=true
 Session\ValidateHTTPSTrackerCertificate=false
+Session\DefaultSavePath=/home/$username/qbittorrent/Downloads/
+Session\SendBufferLowWatermark=$low_buffer
+Session\SendBufferWatermark=$buffer
+Session\SendBufferWatermarkFactor=$buffer_factor
 
 [Core]
 AutoDeleteAddedTorrentFile=Never
@@ -335,7 +339,7 @@ WebUI\CSRFProtection=false
 WebUI\ClickjackingProtection=false
 WebUI\HostHeaderValidation=false
 WebUI\Password_PBKDF2="@ByteArray(klcE8vbtUzDphRZ5MSj5fQ==:5kpWpt5grgskKHlV1FO3Yb/DpCOVkINLNFWT0WInl6EES4RqCVEYatg/aq0P2PKU7QhFxwcn03OIuQc6/0Lumg==)"
-WebUI\Port=18181
+WebUI\Port=$qb_port
 WebUI\SecureCookie=false
 
 [RSS]
